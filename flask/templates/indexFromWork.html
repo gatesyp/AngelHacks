@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Material Design Bootstrap</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="static/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Your custom styles (optional) -->
+    <link href="static/css/style.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <style>
+        .classchapter {
+            color: red;
+            padding-left: 24px;
+            font-size: 24px;
+        }
+
+        .classSection {
+            color: orange;
+            padding-left: 32px;
+            font-size: 18px;
+        }
+
+        .classInfo {
+            color: yellow;
+            padding-left: 40px;
+            font-size: 14px;
+        }
+
+        .listBase {
+            border: 1px solid #000;
+            margin: 2em;
+            width: 10em;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class = container>
+        <div class = "row">
+            <div class="col-md-6">
+                <div>
+                    <h1 id="main">Outline: </h1>
+                    <ul class="listBase" id="mainList">
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <ol>
+                    <li>List 1</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    var obj = {
+        "truck": {first : "f-150", 1: "s10", 2:"Tundra", 3: "Tacoma"},
+		"car": {first: "civic", 1: "gto", 2: "sonata", 3: "maxima"}
+    };
+
+    $.each(obj, function(key, value) {
+        //if(key == "car") {  
+            $("#mainList").append("<li class='classchapter' id='Chapter'>" + key + ":" + value.first + "</li>");
+        //}
+
+        //else {
+        //    $("#Chapter").append('<li class="classSection" id="Section">' + value + '</li>');
+        //}
+    });
+    
+    
+    </script>
+
+
+    <!-- Start your project here-->
+
+    <!-- /Start your project here-->
+
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="static/js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="static/js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="static/js/mdb.min.js"></script>
+
+
+</body>
+
+</html>
+
+
