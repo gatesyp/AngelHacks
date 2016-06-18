@@ -1,0 +1,2 @@
+# AngelHacks
+Dynamic courseware
