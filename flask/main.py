@@ -48,8 +48,7 @@ def get_outline(audio_filename):
     @param audio_filename: the name of the audio file for this lecture
     @return: JSON representation of the lecture study guide
     """
-    my_engine = Engine()
-    return my_engine.execute(audio_filename)
+    return Engine().execute(audio_filename)
 
 if __name__ == "__main__":
     app.run(debug=True)
