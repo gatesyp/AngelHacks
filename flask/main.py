@@ -1,4 +1,5 @@
 import os
+from engine.engine import Engine
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
 
@@ -39,6 +40,16 @@ def upload_file():
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
+@app.route('/api/get_outline', methods=['POST'])
+def get_outline(audio_filename):
+    """
+    Get the json notes off of this audio file
+    @param audio_filename: the name of the audio file for this lecture
+    @return: JSON representation of the lecture study guide
+    """
+    my_engine = Engine()
+    return my_engine.execute(audio_filename)
 
 if __name__ == "__main__":
     app.run(debug=True)
