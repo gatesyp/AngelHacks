@@ -23,7 +23,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
     <style>
-        .classchapter {
+        .classChapter {
             color: red;
             padding-left: 24px;
             font-size: 24px;
@@ -44,7 +44,7 @@
         .listBase {
             border: 1px solid #000;
             margin: 2em;
-            width: 10em;
+            width: 20em;
             padding: 5px;
         }
     </style>
@@ -80,13 +80,15 @@
     };
 
     $.each(obj, function(key, value) {
-        //if(key == "car") {  
-            $("#mainList").append("<li class='classchapter' id='Chapter'>" + key + ":" + value.first + "</li>");
-        //}
+		console.log("running the loop");
+		$("#mainList").append("<li class='classChapter' id='Chapter'>" + key + "</li>");
+		$.each(value, function(num, name) {
+            $("#mainList").append("<li class='classSection' id='Section'>" + num + ":" + name + "</li>");
 
         //else {
         //    $("#Chapter").append('<li class="classSection" id="Section">' + value + '</li>');
         //}
+		});
     });
     
     
