@@ -74,24 +74,20 @@
 
     <script>
 
-    var obj = {
-        "truck": {0 : "f-150", 1: "s10", 2:"Tundra", 3: "Tacoma"},
-		"car": {0: "civic", 1: "gto", 2: "sonata", 3: "maxima"}
+   var obj = {
+        "truck": {first : "f-150", 1: "s10", 2:"Tundra", 3: "Tacoma"},
+		"car": {first: "civic", 1: "gto", 2: "sonata", 3: "maxima"}
     };
-
     $.each(obj, function(key, value) {
-		$("#mainList").append("<ul class='mainULClass'>");
-		$(".mainULClass").append("<li class='classChapter' id='Chapter'>" + key + "</li>");
-		console.log(key);
+		console.log("running the loop");
+		$("#mainList").append("<li class='classChapter' id='Chapter'>" + key + "</li>");
 		$.each(value, function(num, name) {
-			$(".mainULClass").append("<ul id='subUL'>");
-            $("#subUL").append("<li class='classSection' id='Section'>" + num + ":" + name + "</li>");
-			$(".mainULClass").append("</ul>");
-		console.log(name);
+            $("#mainList").append("<li class='classSection' id='Section'>" + num + ":" + name + "</li>");
+        //else {
+        //    $("#Chapter").append('<li class="classSection" id="Section">' + value + '</li>');
+        //}
 		});
-		$(".mainULClass").append("</ul>");
-    });
-    
+    }); 
     
     </script>
 
