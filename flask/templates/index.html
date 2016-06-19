@@ -33,6 +33,9 @@
 		margin-bottom: 40px;
 	}
 
+	.mainOutline {
+		font-size: 24px;
+	}
 </style>
 
 </head>
@@ -103,7 +106,7 @@
 							<button class="btn btn-primary" id="expandList">Expand All</button>
 							<button class="btn btn-secondary" id="collapseList">Collapse All</button>
 						</div>
-					    <ul id="expList">
+					    <ul id="expList" class="mainOutline">
 					    </ul>
 					</div>
 				</div>
@@ -132,22 +135,52 @@
 	        {
 		    $.each(data, function(key, value) {
 		        console.log(key);
-		        $("#expList").append("<li>"+ key +  "");
-		        $("#expList").children().last().append("<ul id='" + key + "'>");  
+		        $("#expList").append("<li>Lecture 1");
+		        $("#expList").children().last().append("<ul id='Lecture-1'>");  
 
 			$.each(value, function(section, information) {
 				console.log(section);
-				$("#" + key).append("<li>" + section + "");
-				$("#" + key).children().last().append("<ul id='" + section + "'>");
+				$("#Lecture-1").append("<li>" + section + "");
+				$("#Lecture-1").children().last().append("<ul id='" + section + "'>");
 				//append to the data ul
-				
-				$.each(information, function(num, title) {
-					console.log(num);
-					$("#" + section).append("<li>" + num + ": " + title + "</li>"); 
-				});
 
-				$("#" + key).children().last().append("</ul>");
-				$("#" + key).append("</li>");
+				//  TODO if section = exercises show image under number
+				//  if section = videos then embed youtube video
+				//  summary remove indexes and just use hyphen
+				if (section == "exercises" ) {
+					var i = 1;
+					$.each(information, function(num, title) {
+						console.log(num);
+						$("#" + section).append("<li>" + "Exercise " + i);
+						$('#' + section).children().last().append("<ul>");
+						$('#' + section).children().last().children().last().append("<img src='/static/PhysicsRepo/" + title + "'>"); 
+						$('#' + section).children().last().append("</ul>");
+						$('#' + section).append("</li>");
+						i = i + 1;
+					});
+				}
+				if (section == "vids") {
+					var i = 1;
+					$.each(information, function(num, title) {
+						youtube_embed_url = title.replace("watch?v=", "embed/") + "?autoplay=0";
+						console.log(num);
+						$("#" + section).append("<li>" + "Video " + i);
+						$('#' + section).children().last().append("<ul>");
+						$('#' + section).children().last().children().last().append("<iframe width='420' height='315' src='" + youtube_embed_url + "'></iframe>");
+						$('#' + section).children().last().append("</ul>");
+						$('#' + section).append("</li>");
+						i = i + 1;
+					});
+				}
+				if (section == "summary") {
+					$.each(information, function(num, title) {
+						console.log(num);
+						$("#" + section).append("<li>" + num + ": " + title + "</li>"); 
+					});
+				}
+
+				$("#Lecture-1").children().last().append("</ul>");
+				$("#Lecture-1").append("</li>");
 			});	
 
 		        $("#expList").children().last().append("</ul>");
