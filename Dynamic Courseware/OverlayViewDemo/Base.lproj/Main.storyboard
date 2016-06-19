@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OverlayViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DCWear" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,24 +18,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2016-06-19 at 7.18.21 AM.png" translatesAutoresizingMaskIntoConstraints="NO" id="fWz-mo-VuK">
+                                <frame key="frameInset" minY="620" width="375" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="brK-g3-Nxh">
+                                <frame key="frameInset" width="375" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.078602470457553864" green="0.74606126546859741" blue="0.7690390944480896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="roundBook.png" highlightedImage="roundBook.png" translatesAutoresizingMaskIntoConstraints="NO" id="EFd-Cb-hhP">
+                                <frame key="frameInset" minX="136" minY="34" width="103" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4og-fP-hBy">
-                                <frame key="frameInset" minX="215" minY="170" width="100" height="101"/>
+                                <frame key="frameInset" minX="223" minY="621" width="49" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="showList" image="bulleted_list.png"/>
                                 <connections>
                                     <action selector="listViewPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="dEU-Bi-y1T"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4r-kN-Eym">
+                                <frame key="frameInset" minX="159" minY="618" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="upload" image="upload_to_cloud.png"/>
+                                <connections>
+                                    <action selector="uploadViewPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="dNc-h3-7z6"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hj8-4s-1yd">
-                                <frame key="frameInset" minX="58" minY="171" width="100" height="100"/>
+                                <frame key="frameInset" minX="103" minY="622" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="record" image="microphone.png"/>
                                 <connections>
                                     <action selector="recordViewPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="d1q-hO-DbL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XY8-m1-Ngo">
+                                <frame key="frameInset" minY="623" width="57" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="home.png"/>
+                                <connections>
+                                    <action selector="homeViewPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="diJ-ho-P0M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.78144794702529907" green="0.89695650339126587" blue="0.98487979173660278" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="listButton" destination="4og-fP-hBy" id="Ab1-Vk-ZDL"/>
@@ -48,8 +79,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Screen Shot 2016-06-19 at 7.18.21 AM.png" width="757" height="93"/>
         <image name="bulleted_list.png" width="96" height="96"/>
+        <image name="home.png" width="96" height="96"/>
         <image name="microphone.png" width="96" height="96"/>
+        <image name="roundBook.png" width="512" height="512"/>
+        <image name="upload_to_cloud.png" width="96" height="96"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

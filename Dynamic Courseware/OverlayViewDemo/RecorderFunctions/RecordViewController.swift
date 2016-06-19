@@ -1,22 +1,24 @@
 //
-//  OverlayView.swift
-//  Dealership
+//  RecordViewController.swift
+//  Post
 //
-//  Created by Sztanyi Szabolcs on 05/01/16.
-//  Copyright © 2016 Zappdesigntemplates. All rights reserved.
+//  Created by Aron Gates on 06/18/16.
+//  Copyright © 2016 geczy.tech All rights reserved.
 //
 
 import UIKit
+import AVFoundation
+import Alamofire
 
-
-/// Custom view that displays when a user adds a Car to the Garage (Saves it locally)
+/// Custom view that displays when a user wants to record something
 class RecordViewController: UIView
 {
     var nibValue:String = "RecordView"
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
     
-    /// Label to show the empty text
     @IBOutlet weak var titleLabel: UILabel!
-    /// ImageView that holds the icon
     @IBOutlet weak var emptyIcon: UIImageView!
 
     // Our custom view from the XIB file
@@ -52,11 +54,12 @@ class RecordViewController: UIView
      Loads a view instance from the xib file
      - returns: loaded view
      */
-    func loadViewFromXibFile(nibCall:String) -> UIView
+    
+    func loadViewFromXibFile(_ nibCall:String) -> UIView
     {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: self.dynamicType)
         let nib = UINib(nibName: nibCall, bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
     }
 
@@ -83,21 +86,21 @@ class RecordViewController: UIView
 
      - parameter onView: the view that will display the overlayView
      */
-    func displayView(onView: UIView)
+    func displayView(_ onView: UIView)
     {
         self.alpha = 1.0
         onView.addSubview(self)
 
-        onView.addConstraint(NSLayoutConstraint(item: self, attribute: .CenterY, relatedBy: .Equal, toItem: onView, attribute: .CenterY, multiplier: 1.0, constant: 0.0)) // move it a bit upwards
-        onView.addConstraint(NSLayoutConstraint(item: self, attribute: .CenterX, relatedBy: .Equal, toItem: onView, attribute: .CenterX, multiplier: 1.0, constant: 0.0))
+        onView.addConstraint(NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: onView, attribute: .centerY, multiplier: 1.0, constant: -49.0)) // move it a bit upwards
+        onView.addConstraint(NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: onView, attribute: .centerX, multiplier: 1.0, constant: 0.0))
         onView.needsUpdateConstraints()
 
         // display the view
-        transform = CGAffineTransformMakeScale(0.1, 0.1)
-        UIView.animateWithDuration(0.3, animations:
+        transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        UIView.animate(withDuration: 0.3, animations:
             { () -> Void in
                 self.alpha = 1.0
-                self.transform = CGAffineTransformIdentity
+                self.transform = CGAffineTransform.identity
             })
                 /* When finished wait 1.5 seconds, than hide it
                 let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1.5 * Double(NSEC_PER_SEC)))
@@ -113,12 +116,12 @@ class RecordViewController: UIView
     {
         super.updateConstraints()
 
-        addConstraint(NSLayoutConstraint(item: self, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 667))
-        addConstraint(NSLayoutConstraint(item: self, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 375))
-        addConstraint(NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1.0, constant: 0.0))
-        addConstraint(NSLayoutConstraint(item: view, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1.0, constant: 0.0))
-        addConstraint(NSLayoutConstraint(item: view, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1.0, constant: 0.0))
-        addConstraint(NSLayoutConstraint(item: view, attribute: .Leading, relatedBy: .Equal, toItem: self, attribute: .Leading, multiplier: 1.0, constant: 0.0))
+        addConstraint(NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 618))
+        addConstraint(NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 375))
+        addConstraint(NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0))
+        addConstraint(NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0))
+        addConstraint(NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0.0))
+        addConstraint(NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0))
     }
 
     /**
@@ -126,14 +129,22 @@ class RecordViewController: UIView
      */
     @IBAction func hideView()
     {
-        UIView.animateWithDuration(0.3, animations:
+        UIView.animate(withDuration: 0.3, animations:
         { () -> Void in
-                self.transform = CGAffineTransformMakeScale(0.1, 0.1)
+                self.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         })
         {
             (finished) -> Void in
             self.removeFromSuperview()
         }
     }
-
+    
+    @IBAction func sendPost()
+    {
+        Alamofire.request(.GET, "https://httpbin.org/deny", parameters: [:]).responseString
+        { response in
+            let value = response.result.value
+            self.titleLabel.text = value
+        }
+    }
 }

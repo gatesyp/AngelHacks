@@ -12,6 +12,7 @@ class ViewController: UIViewController
 {
     @IBOutlet var listButton: UIButton!
     @IBOutlet var recordButton: UIButton!
+    var whichView = ""
     
     override func viewDidLoad()
     {
@@ -34,14 +35,64 @@ class ViewController: UIViewController
         return listView
     }()
     
+    // Overlay Upload
+    lazy var uploadView: UploadViewController = {
+        let uploadView = UploadViewController()
+        return uploadView
+    }()
+    
     @IBAction func recordViewPress()
     {
-        recordView.displayView(view)
+        if whichView != "recordView"
+        {
+            home()
+            whichView = "recordView"
+            recordView.displayView(view)
+        }
     }
     
     @IBAction func listViewPress()
     {
-        listView.displayView(view)
+        if whichView != "listView"
+        {
+            home()
+            whichView = "listView"
+            listView.displayView(view)
+        }
+    }
+    
+    @IBAction func uploadViewPress()
+    {
+        if whichView != "uploadView"
+        {
+            home()
+            whichView = "uploadView"
+            uploadView.displayView(view)
+        }
+    }
+    
+    @IBAction func homeViewPress()
+    {
+        home()
+        whichView = ""
+    }
+    
+    func home()
+    {
+        switch whichView
+        {
+        case "recordView":
+            recordView.hideView()
+            break
+        case "listView":
+            listView.hideView()
+            break
+        case "uploadView":
+            uploadView.hideView()
+            break
+        default:
+            break
+        }
     }
 
 }

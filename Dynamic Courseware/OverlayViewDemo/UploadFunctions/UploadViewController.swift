@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  UploadViewController.swift
 //  Post
 //
 //  Created by Aron Gates on 06/18/16.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-/// Custom view that displays when a user wants to view his analyzed list
-class ListViewController: UIView {
+/// Custom view that displays when a user wants to upload a local recording
+class UploadViewController: UIView {
 
-    var nibValue:String = "ListView"
+    var nibValue:String = "UploadView"
     
     /// Label to show the empty text
     @IBOutlet weak var titleLabel: UILabel!
