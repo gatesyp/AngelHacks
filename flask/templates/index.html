@@ -20,54 +20,170 @@
     <!-- Your custom styles (optional) -->
     <link href="static/css/style.css" rel="stylesheet">
 
+	<link href="static/css/simple-sidebar.css" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<style>
+	body {
+		background-color: #fafafa;
+	}
+
+	.navbar {
+		margin-bottom: 40px;
+	}
+
+</style>
 
 </head>
 
 <body>
+    <div id="wrapper">
 
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-2"> 
-			<p>Hello there how are you this is really bnice how are you 
-			ruseeelll this is a nice meme we have here this is ncie asdasdfasdf<p>
-		</div>
-		<div class="col-md-8">
-			<div id="listContainer">
-			    <div class = "listControl">
-					<a id="expandList">Expand All</a>
-					<a id="collapseList">Collapse All</a>
-				</div>
-			    <ul id="expList">
-			    </ul>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+
+					<div class="col-md-12">
+                            <!--panel-->
+                            <div class="card">
+                                <h3 class="card-header info-color-dark white-text">Latest Outline</h3>
+                                <div class="card-block">
+                                    <h4 class="card-title">Week 1</h4>
+                                    <p class="card-text" id="breifsum" >this week we talked about memes!</p>
+                                    <a class="btn btn-primary waves-effect waves-light">view outline</a>
+                                </div>
+                            </div>
+                            <!--/.panel-->
+    </div>
+					<div class="col-md-12">
+                            <!--panel-->
+                            <div class="card">
+                                <h3 class="card-header warning-color white-text">Create New</h3>
+                                <div class="card-block">
+                                    <h4 class="card-title">Week 2</h4>
+                                    <p class="card-text" id="breifsum" >How to meme 101<p>
+                                    <a class="btn btn-primary waves-effect waves-light">Add New</a>
+                                </div>
+                            </div>
+                            <!--/.panel-->
+    </div>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+<div class="container">
+	<div style="background-color: white">
+	<div class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				
+				<form id="analyze" action="" method="POST">
+					<button type="submit" id="analyzeButton" class="btn btn-secondary" style="float: right;">Analyze</button>
+				</form>	
+					<!--<form action="" method=post enctype=multipart/form-data> <p><input type=file name=file>
+							<input type=submit value=Upload>-->
+							<a class="navbar-brand" href="#"><h1>Dynamic Courseware</h1></a>
 			</div>
 		</div>
-		<div class="col-md-2">
-			<p>Hello there roos</p>
+	</div>
+	</div>	
+	<div class="jumbotron" id="mainPage">
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-12">
+					<div id="listContainer">
+					    <div class = "listControl">
+							<button class="btn btn-primary" id="expandList">Expand All</button>
+							<button class="btn btn-secondary" id="collapseList">Collapse All</button>
+						</div>
+					    <ul id="expList">
+					    </ul>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
 <script>
 
-   var obj = {
+	$(document).ready(function() {
+		$('#mainPage').hide();
+	    $("#analyze").submit(function(e) {
+      var url = "http://127.0.0.1:5000/upload"; //e script where you handle the form input.
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: "outline",
+        success: function(data)
+        {
+		    $.each(data, function(key, value) {
+		        console.log(key);
+		        $("#expList").append("<li>"+ key +  "");
+		        $("#expList").children().last().append("<ul id='" + key + "'>");  
+		
+		        $.each(value, function(type, info) {
+					if(type == "YouTube")
+					{
+		            	$("#" + key).append("<li class='YouTubeClass'" + type + ": " + info + "</li>");
+		        		console.log(name);
+					}
+
+					if(key == "summary") {
+		            	$("#" + key).append("<li class='summaryClass'" + type + ":" + info + "</li>");
+		        		console.log(name);
+					}
+
+					if(key == "question") {
+		            	$("#" + key).append("<li class='summaryClass'" + type + ":" + info + "</li>");
+		        		console.log(name);
+					}
+		        });
+
+		        $("#expList").children().last().append("</ul>");
+				$("#expList").append("</li>");
+		    }); 
+
+        //alert(data); // show response from the python script.
+		prepareList();
+        }
+      });
+      e.preventDefault(); // avoid to execute the actual submit of the form.
+    });
+	
+		$("#mainPage").show();
+	});
+
+		/*var file = document.getElementById('file-select').files[0]; //Files[0] = 1st file
+		var reader = new FileReader();
+		reader.readAsText(file, 'UTF-8');
+		reader.onload = shipOff;
+		//reader.onloadstart = ...
+		//reader.onprogress = ... <-- Allows you to update a progress bar.
+		//reader.onabort = ...
+		//reader.onerror = ...
+		//reader.onloadend = ...
+*/		
+		
+
+/*   var obj = {
         "truck": {0 : "f-150", 1: "s10", 2:"Tundra", 3: "Tacoma"},
         "car": {0: "civic", 1: "gto", 2: "sonata", 3: "maxima"}
-    };
+    };*/
 
-    $.each(obj, function(key, value) {
-        console.log(key);
-        $("#expList").append("<li>"+ key +  "");
-        //$("#explist li:last-child").append("<ul id='" + key + "'>");  
-        $("#expList").children().last().append("<ul id='" + key + "'>");  
-
-        $.each(value, function(num, name) {
-            $("#" + key).append("<li id='Section'>" + num + ":" + name + "</li>");
-        	console.log(name);
-        });
-
-        $("#expList").children().last().append("</ul>");
-		$("#expList").append("</li>");
-    }); 
 
 	/**************************************************************/
 	/* Prepares the cv to be dynamically expandable/collapsible   */
@@ -89,7 +205,7 @@
 	    .unbind('click')
 	    .click( function() {
 	        $('.collapsed').addClass('expanded');
-	        $('.collapsed').children().show('medium');
+	        $('.collapsed').children().toggle('medium');
 	    })  
 	    $('#collapseList')
 	    .unbind('click')
@@ -100,9 +216,6 @@
 	    
 	};
 	
-	$(document).ready(function() {
-		prepareList()
-	});
 
 
     </script>
@@ -122,3 +235,4 @@
 
 </body>
 </html>
+
