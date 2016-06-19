@@ -123,7 +123,7 @@
 	$(document).ready(function() {
 		$('#mainPage').hide();
 	    $("#analyze").submit(function(e) {
-      var url = "http://127.0.0.1:5000/upload"; //e script where you handle the form input.
+      var url = "http://127.0.0.1:5000/api/get_outline"; //e script where you handle the form input.
       $.ajax({
         type: "POST",
         url: url,
