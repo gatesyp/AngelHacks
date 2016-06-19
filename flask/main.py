@@ -23,12 +23,14 @@ def allowed_file(filename):
 @app.route('/upload', methods=['GET', 'POST'])
 def test():
     print "it workedsdsfdkojflskdfghnkldsjgdfklrg"
-    obj = {
-                    "truck": {0 : "f-150", 1: "s10", 2:"Tundra", 3: "Tacoma"},
-                            "car": {0: "civic", 1: "gto", 2: "sonata", 3: "maxima"}
-                                }
+    
+        
+    obj = donger
 
+    #return "hello there"
     return flask.jsonify(obj)
+
+
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
