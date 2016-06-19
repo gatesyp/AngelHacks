@@ -34,7 +34,7 @@
 	}
 
 	.mainOutline {
-		font-size: 24px;
+		font-size: 30px;
 	}
 </style>
 
@@ -153,7 +153,7 @@
 				if (section == "summary") {
 					$.each(information, function(num, title) {
 						console.log(num);
-						$("#" + section).append("<li>" + num + ": " + title + "</li>"); 
+						$("#" + section).append("<li style='list-style-type:disc'>"  + title + "</li>"); 
 					});
 				}
 				if (section == "vids") {

@@ -80,7 +80,7 @@ class getContent():
         # get questions sheet
         sheet = wb2.get_sheet_by_name('Questions')
         # 5 for primary categories, 16 for specific categories
-        category = 5
+        category = 16
         max_rows = sheet.max_row
         for i in range(1, max_rows, 1):
             content = sheet.cell(row=i, column=category).value
