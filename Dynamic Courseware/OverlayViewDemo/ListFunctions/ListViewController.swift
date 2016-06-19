@@ -10,8 +10,12 @@ import UIKit
 
 /// Custom view that displays when a user wants to view his analyzed list
 class ListViewController: UIView {
-
+    var whichView:String = "ListView"
     var nibValue:String = "ListView"
+    
+    @IBOutlet var video1: UIWebView!
+    @IBOutlet var video2: UIWebView!
+    @IBOutlet var video3: UIWebView!
     
     /// Label to show the empty text
     @IBOutlet weak var titleLabel: UILabel!
@@ -134,5 +138,114 @@ class ListViewController: UIView {
             self.removeFromSuperview()
         }
     }
-
+    
+    @IBAction func switchView()
+    {
+        xibSetupAdvance()
+    }
+    
+    @IBAction func switchViewBack()
+    {
+        xibSetupBack()
+    }
+    
+    func xibSetupAdvance() {
+        view = loadViewFromNibAdvance()
+        
+        // use bounds not frame or it'll be offset
+        view.frame = bounds
+        
+        // Make the view stretch with containing view
+        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        // Adding custom subview on top of our view (over any custom drawing > see note below)
+        
+        UIView.animate(withDuration: 0.3, animations:
+            { () -> Void in
+                self.transform = CGAffineTransform(scaleX: 0.5, y: 1.0)
+            })
+        { (finished) -> Void in
+            self.addSubview(self.view)
+            if self.whichView == "ListView3"
+            {
+                let myURL1 : NSURL = NSURL(string: "https://www.youtube.com/embed/g157qwT1918")!
+                let myURLRequest1 : NSURLRequest = NSURLRequest(url: myURL1 as URL)
+                let myURL2 : NSURL = NSURL(string: "https://www.youtube.com/embed/9gUdDM6LZGo")!
+                let myURLRequest2 : NSURLRequest = NSURLRequest(url: myURL2 as URL)
+                let myURL3 : NSURL = NSURL(string: "https://www.youtube.com/embed/zDcf7eEaP0M")!
+                let myURLRequest3 : NSURLRequest = NSURLRequest(url: myURL3 as URL)
+                self.video1.loadRequest(myURLRequest1 as URLRequest)
+                self.video2.loadRequest(myURLRequest2 as URLRequest)
+                self.video3.loadRequest(myURLRequest3 as URLRequest)
+            }
+            UIView.animate(withDuration: 0.3, animations:
+                { () -> Void in
+                    self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                })
+            { (finished) -> Void in
+            }
+        }
+    }
+    
+    func loadViewFromNibAdvance() -> UIView {
+        switch whichView {
+        case "ListView":
+            whichView = "ListView2"
+            break
+        case "ListView2":
+            whichView = "ListView3"
+            break
+        default:
+            break
+        }
+        
+        let bundle = Bundle(for: self.dynamicType)
+        let nib = UINib(nibName: whichView, bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        
+        return view
+    }
+    
+    func xibSetupBack() {
+        view = loadViewFromNibBack()
+        
+        // use bounds not frame or it'll be offset
+        view.frame = bounds
+        
+        // Make the view stretch with containing view
+        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        // Adding custom subview on top of our view (over any custom drawing > see note below)
+        
+        UIView.animate(withDuration: 0.3, animations:
+            { () -> Void in
+                self.transform = CGAffineTransform(scaleX: 0.5, y: 1.0)
+            })
+        { (finished) -> Void in
+            self.addSubview(self.view)
+            UIView.animate(withDuration: 0.3, animations:
+                { () -> Void in
+                    self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                })
+            { (finished) -> Void in
+            }
+        }
+    }
+    
+    func loadViewFromNibBack() -> UIView {
+        switch whichView {
+        case "ListView3":
+            whichView = "ListView2"
+            break
+        case "ListView2":
+            whichView = "ListView"
+            break
+        default:
+            break
+        }
+        
+        let bundle = Bundle(for: self.dynamicType)
+        let nib = UINib(nibName: whichView, bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        
+        return view
+    }
 }

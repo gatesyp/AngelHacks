@@ -3,17 +3,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordViewController" customModule="DCWear" customModuleProvider="target">
             <connections>
                 <outlet property="emptyIcon" destination="XCY-Yn-HGj" id="rmD-AK-ZAR"/>
-                <outlet property="playButton" destination="DPw-eb-TKz" id="MS7-Xl-qey"/>
-                <outlet property="recordButton" destination="9MY-z6-5Hf" id="Ngs-r0-iwU"/>
-                <outlet property="stopButton" destination="4bF-Pg-pRw" id="T79-ut-SbD"/>
-                <outlet property="titleLabel" destination="38P-fh-Tln" id="0X0-fD-x6V"/>
                 <outlet property="visualEffectView" destination="QSe-3H-Shi" id="SzW-UF-9dC"/>
             </connections>
         </placeholder>
@@ -27,45 +22,42 @@
                         <frame key="frameInset"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bF-Pg-pRw">
-                                <state key="normal" title="Stop"/>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help.png" translatesAutoresizingMaskIntoConstraints="NO" id="XCY-Yn-HGj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2016-06-19 at 7.18.21 AM.png" translatesAutoresizingMaskIntoConstraints="NO" id="hEM-un-kLt">
+                                <frame key="frameInset" minX="16" minY="139" width="341" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stop.png" translatesAutoresizingMaskIntoConstraints="NO" id="c9q-q7-a3g">
+                                <frame key="frameInset" minX="17" minY="214" width="145" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="record.png" translatesAutoresizingMaskIntoConstraints="NO" id="dI5-fN-3g9">
+                                <frame key="frameInset" minX="212" minY="214" width="145" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvX-kM-ek8">
+                                <frame key="frameInset" minX="131" minY="58" width="121" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="36"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="microphone2.png" translatesAutoresizingMaskIntoConstraints="NO" id="XCY-Yn-HGj">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="2VY-a2-Rh7"/>
-                                    <constraint firstAttribute="width" constant="50" id="Gub-wl-ZhW"/>
+                                    <constraint firstAttribute="height" constant="67" id="2VY-a2-Rh7"/>
+                                    <constraint firstAttribute="width" constant="80" id="Gub-wl-ZhW"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPw-eb-TKz">
-                                <state key="normal" title="Play"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MY-z6-5Hf">
-                                <state key="normal" title="Record"/>
-                                <connections>
-                                    <action selector="sendPost" destination="-1" eventType="touchUpInside" id="LwP-nL-Fay"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record View Test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38P-fh-Tln">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="123" id="O2z-mu-1e2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="7"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAE-Af-Cm2">
+                                <frame key="frameInset" minX="150" minY="349" width="72" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="top" secondItem="x7n-lc-xIx" secondAttribute="top" constant="199" id="3n8-rs-4en"/>
-                            <constraint firstItem="38P-fh-Tln" firstAttribute="top" secondItem="XCY-Yn-HGj" secondAttribute="bottom" constant="8" id="NHk-hN-9xX"/>
-                            <constraint firstItem="9MY-z6-5Hf" firstAttribute="top" secondItem="38P-fh-Tln" secondAttribute="bottom" constant="53" id="Nn0-1i-5c9"/>
-                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="centerX" secondItem="x7n-lc-xIx" secondAttribute="centerX" id="SgD-fr-BSh"/>
-                            <constraint firstItem="4bF-Pg-pRw" firstAttribute="baseline" secondItem="DPw-eb-TKz" secondAttribute="baseline" id="UYP-QB-yoQ"/>
-                            <constraint firstItem="4bF-Pg-pRw" firstAttribute="leading" secondItem="DPw-eb-TKz" secondAttribute="trailing" constant="49" id="YL3-Ac-jEw"/>
-                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="leading" secondItem="9MY-z6-5Hf" secondAttribute="leading" id="ZRx-oY-ma3"/>
-                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="centerX" secondItem="38P-fh-Tln" secondAttribute="centerX" id="aPq-OS-SjX"/>
-                            <constraint firstItem="4bF-Pg-pRw" firstAttribute="top" secondItem="38P-fh-Tln" secondAttribute="bottom" constant="-9" id="acc-Y8-FNb"/>
-                            <constraint firstItem="38P-fh-Tln" firstAttribute="leading" secondItem="x7n-lc-xIx" secondAttribute="leadingMargin" id="sQt-Br-RPE"/>
-                            <constraint firstAttribute="trailing" secondItem="4bF-Pg-pRw" secondAttribute="trailing" constant="132" id="t4I-11-tUr"/>
+                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="top" secondItem="x7n-lc-xIx" secondAttribute="top" constant="64" id="3n8-rs-4en"/>
+                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="centerX" secondItem="x7n-lc-xIx" secondAttribute="centerX" constant="-131.5" id="SgD-fr-BSh"/>
                         </constraints>
                     </view>
                     <blurEffect style="light"/>
@@ -83,7 +75,10 @@
         </view>
     </objects>
     <resources>
-        <image name="help.png" width="96" height="96"/>
+        <image name="Screen Shot 2016-06-19 at 7.18.21 AM.png" width="757" height="93"/>
+        <image name="microphone2.png" width="96" height="96"/>
+        <image name="record.png" width="96" height="96"/>
+        <image name="stop.png" width="96" height="96"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -14,6 +14,7 @@ class ViewController: UIViewController
     @IBOutlet var recordButton: UIButton!
     var whichView = ""
     
+    @IBOutlet var lectureButton1: UIButton!
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -92,6 +93,18 @@ class ViewController: UIViewController
             break
         default:
             break
+        }
+    }
+    
+    @IBAction func chooseLecture()
+    {
+        if lectureButton1.currentTitleColor == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        {
+            lectureButton1.setTitleColor(#colorLiteral(red: 0.09803923219, green: 0.3607843518, blue: 0.3098038435, alpha: 1), for: [])
+        }
+        else
+        {
+            lectureButton1.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: [])
         }
     }
 

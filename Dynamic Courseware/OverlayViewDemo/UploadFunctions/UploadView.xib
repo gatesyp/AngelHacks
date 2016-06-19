@@ -9,7 +9,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UploadViewController" customModule="DCWear" customModuleProvider="target">
             <connections>
                 <outlet property="emptyIcon" destination="XCY-Yn-HGj" id="rmD-AK-ZAR"/>
-                <outlet property="titleLabel" destination="38P-fh-Tln" id="0X0-fD-x6V"/>
                 <outlet property="visualEffectView" destination="QSe-3H-Shi" id="SzW-UF-9dC"/>
             </connections>
         </placeholder>
@@ -23,22 +22,15 @@
                         <frame key="frameInset"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help.png" translatesAutoresizingMaskIntoConstraints="NO" id="XCY-Yn-HGj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circled_up_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="XCY-Yn-HGj">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="2VY-a2-Rh7"/>
-                                    <constraint firstAttribute="width" constant="50" id="Gub-wl-ZhW"/>
+                                    <constraint firstAttribute="height" constant="160" id="2VY-a2-Rh7"/>
+                                    <constraint firstAttribute="width" constant="191" id="Gub-wl-ZhW"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload view test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38P-fh-Tln">
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="38P-fh-Tln" firstAttribute="top" secondItem="XCY-Yn-HGj" secondAttribute="bottom" constant="15" id="NHk-hN-9xX"/>
-                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="centerX" secondItem="38P-fh-Tln" secondAttribute="centerX" id="aPq-OS-SjX"/>
-                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="top" secondItem="x7n-lc-xIx" secondAttribute="top" constant="262" id="eIs-yl-HoU"/>
+                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="top" secondItem="x7n-lc-xIx" secondAttribute="top" constant="133" id="eIs-yl-HoU"/>
                             <constraint firstItem="XCY-Yn-HGj" firstAttribute="centerX" secondItem="x7n-lc-xIx" secondAttribute="centerX" id="tsG-iY-mZz"/>
                         </constraints>
                     </view>
@@ -53,11 +45,11 @@
                 <constraint firstItem="QSe-3H-Shi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sPL-mS-0JL"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="-238" y="7"/>
+            <point key="canvasLocation" x="-238.5" y="6.5"/>
         </view>
     </objects>
     <resources>
-        <image name="help.png" width="96" height="96"/>
+        <image name="circled_up_2.png" width="96" height="96"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

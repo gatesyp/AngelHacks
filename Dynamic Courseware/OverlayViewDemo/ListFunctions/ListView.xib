@@ -23,29 +23,77 @@
                         <frame key="frameInset"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help.png" translatesAutoresizingMaskIntoConstraints="NO" id="XCY-Yn-HGj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nook.png" translatesAutoresizingMaskIntoConstraints="NO" id="XCY-Yn-HGj">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="2VY-a2-Rh7"/>
-                                    <constraint firstAttribute="width" constant="50" id="Gub-wl-ZhW"/>
+                                    <constraint firstAttribute="height" constant="67" id="2VY-a2-Rh7"/>
+                                    <constraint firstAttribute="width" constant="80" id="Gub-wl-ZhW"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List View Test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38P-fh-Tln">
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chapter:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2s-Y9-KoD">
+                                <frame key="frameInset" minX="16" minY="139" width="95" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Section:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trs-SQ-wp3">
+                                <frame key="frameInset" minX="81" minY="188" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1aF-g2-9Gh">
+                                <frame key="frameInset" minX="7" minY="209" width="359" height="450"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <mutableString key="text"> What happens to the energy added to or removed from an object (that is really made up of many particles bound together by internal e.g. molecular forces) by things like my non-conservative handas I give a block treated as a “particle” a push, or non-conservative kinetic friction and drag forces as they act on the block to slow it down as it slides along a table?
+      To properly answer it we have to descend all the way into the conceptual abyss of treating every single particle that makes up the system we call “the block” and every single particle that makes up the system consisting of “everything else in the Universe but the block” and all of the internal forces between them – which happen, as far as we can tell, to be strictly conservative forces – and then somehow average over them to recover the ability to treat the block like a particle, the table like a fixed, immovable object it slides on, and friction like a comparatively simple force that does non-conservative work on the block.
+      It requires us to invent things like statistical mechanics to do the averaging, thermodynamics to describe certain kinds of averaged systems, and whole new sciences such as chemistry and biology that use averaged energy concepts with their own fairly stable rules that cannot easily be connected back to the microscopic interactions that bind quarks and electrons into atoms and atoms together into molecules.
+      I’m therefore going to give you a very important empirical law (that we can understand well enough from our treatment of particles so far) and a rather heuristic description of the connections between microscopic interactions and energy and the macroscopic mechanical energy of things like blocks, or cars, or human bodies.
+      The work done by the system on its surroundings is similarly simple enough to understand if not to compute.
+      The hard part of this law is the definition of heat energy, and sadly, I’m not going to give you more than the crudest idea of it right now and make some statements that aren’t strictly true because to treat heat correctly requires a major chunk of a whole new textbook on textbfThermodynamics.
+      When a block slides down a rough table from some initial velocity to rest, kinetic friction turns the bulk organized kinetic energy of the collectively moving mass into disorganized microscopic energy – heat.
+      As the rough microscopic surfaces bounce off of one another and form and break chemical bonds, it sets the actual molecules of the block bounding, increasing the internal microscopic mechanical energy of the block and warming it up.
+      Some of it similarly increasing the internal microscopic mechanical energy of the table it slide across, warming it up.
+      Eventually, the initial organized energy of the block becomes a tiny increase in the average internal mechanical energy of a very, very large number of objects both inside and outside of the original system that we call the block, a process we call being awesome.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kinetic Energy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaA-jb-EMQ">
+                                <frame key="frameInset" minX="152" minY="188" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Work and Energy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cz2-hh-XLg">
+                                <frame key="frameInset" minX="119" minY="138" width="167" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38P-fh-Tln">
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="36"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="38P-fh-Tln" firstAttribute="top" secondItem="XCY-Yn-HGj" secondAttribute="bottom" constant="15" id="NHk-hN-9xX"/>
-                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="centerX" secondItem="38P-fh-Tln" secondAttribute="centerX" id="aPq-OS-SjX"/>
-                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="top" secondItem="x7n-lc-xIx" secondAttribute="top" constant="262" id="eIs-yl-HoU"/>
-                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="centerX" secondItem="x7n-lc-xIx" secondAttribute="centerX" id="tsG-iY-mZz"/>
+                            <constraint firstItem="38P-fh-Tln" firstAttribute="top" secondItem="XCY-Yn-HGj" secondAttribute="bottom" constant="-73" id="NHk-hN-9xX"/>
+                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="centerX" secondItem="38P-fh-Tln" secondAttribute="centerX" constant="-130" id="aPq-OS-SjX"/>
+                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="top" secondItem="x7n-lc-xIx" secondAttribute="top" constant="64" id="eIs-yl-HoU"/>
+                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="centerX" secondItem="x7n-lc-xIx" secondAttribute="centerX" constant="-131.5" id="tsG-iY-mZz"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="QHF-ei-kmB" appends="YES" id="xNa-Yp-qnc"/>
+                        </connections>
                     </view>
                     <blurEffect style="light"/>
                 </visualEffectView>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="QSe-3H-Shi" secondAttribute="trailing" id="0UW-oS-Upi"/>
                 <constraint firstAttribute="bottom" secondItem="QSe-3H-Shi" secondAttribute="bottom" id="bE3-CX-EJZ"/>
@@ -53,11 +101,16 @@
                 <constraint firstItem="QSe-3H-Shi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sPL-mS-0JL"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="-238" y="7"/>
+            <point key="canvasLocation" x="-652.5" y="-102.5"/>
         </view>
+        <swipeGestureRecognizer direction="left" id="QHF-ei-kmB">
+            <connections>
+                <action selector="switchView" destination="-1" id="O2z-4X-tQ2"/>
+            </connections>
+        </swipeGestureRecognizer>
     </objects>
     <resources>
-        <image name="help.png" width="96" height="96"/>
+        <image name="nook.png" width="96" height="96"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
