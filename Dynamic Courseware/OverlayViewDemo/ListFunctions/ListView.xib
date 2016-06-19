@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11129.15" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="DCWear" customModuleProvider="target">
+            <connections>
+                <outlet property="emptyIcon" destination="XCY-Yn-HGj" id="rmD-AK-ZAR"/>
+                <outlet property="titleLabel" destination="38P-fh-Tln" id="0X0-fD-x6V"/>
+                <outlet property="visualEffectView" destination="QSe-3H-Shi" id="SzW-UF-9dC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSe-3H-Shi">
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="x7n-lc-xIx">
+                        <frame key="frameInset"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help.png" translatesAutoresizingMaskIntoConstraints="NO" id="XCY-Yn-HGj">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="2VY-a2-Rh7"/>
+                                    <constraint firstAttribute="width" constant="50" id="Gub-wl-ZhW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List View Test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38P-fh-Tln">
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="38P-fh-Tln" firstAttribute="top" secondItem="XCY-Yn-HGj" secondAttribute="bottom" constant="15" id="NHk-hN-9xX"/>
+                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="centerX" secondItem="38P-fh-Tln" secondAttribute="centerX" id="aPq-OS-SjX"/>
+                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="top" secondItem="x7n-lc-xIx" secondAttribute="top" constant="262" id="eIs-yl-HoU"/>
+                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="centerX" secondItem="x7n-lc-xIx" secondAttribute="centerX" id="tsG-iY-mZz"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="QSe-3H-Shi" secondAttribute="trailing" id="0UW-oS-Upi"/>
+                <constraint firstAttribute="bottom" secondItem="QSe-3H-Shi" secondAttribute="bottom" id="bE3-CX-EJZ"/>
+                <constraint firstItem="QSe-3H-Shi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rDQ-mx-MYw"/>
+                <constraint firstItem="QSe-3H-Shi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sPL-mS-0JL"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="-238" y="7"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="help.png" width="96" height="96"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
