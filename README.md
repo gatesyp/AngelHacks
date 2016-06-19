@@ -10,8 +10,6 @@ sudo pip install openpyxl
 sudo pip install pdfminer  
 sudo pip install sumy
 sudo pip install flask
-sudo pip install --upgrade pip setuptools
-sudo pip install virtualenv 	
 pip install git+https://github.com/HPE-Haven-OnDemand/havenondemand-python
 ```
 
