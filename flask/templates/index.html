@@ -89,6 +89,9 @@
 				<form id="analyze" action="" method="POST">
 					<button type="submit" id="analyzeButton" class="btn btn-secondary" style="float: right;">Analyze</button>
 				</form>	
+				<div style="float: right;">
+				<label class="btn btn-default btn-file right-align"> Browse <input type="file" style="float: right; display: none;"> </label>
+				</div>
 					<!--<form action="" method=post enctype=multipart/form-data> <p><input type=file name=file>
 							<input type=submit value=Upload>-->
 							<a class="navbar-brand" href="#"><h1>Dynamic Courseware</h1></a>
@@ -147,16 +150,10 @@
 				//  TODO if section = exercises show image under number
 				//  if section = videos then embed youtube video
 				//  summary remove indexes and just use hyphen
-				if (section == "exercises" ) {
-					var i = 1;
+				if (section == "summary") {
 					$.each(information, function(num, title) {
 						console.log(num);
-						$("#" + section).append("<li>" + "Exercise " + i);
-						$('#' + section).children().last().append("<ul>");
-						$('#' + section).children().last().children().last().append("<img src='/static/PhysicsRepo/" + title + "'>"); 
-						$('#' + section).children().last().append("</ul>");
-						$('#' + section).append("</li>");
-						i = i + 1;
+						$("#" + section).append("<li>" + num + ": " + title + "</li>"); 
 					});
 				}
 				if (section == "vids") {
@@ -172,10 +169,16 @@
 						i = i + 1;
 					});
 				}
-				if (section == "summary") {
+				if (section == "exercises" ) {
+					var i = 1;
 					$.each(information, function(num, title) {
 						console.log(num);
-						$("#" + section).append("<li>" + num + ": " + title + "</li>"); 
+						$("#" + section).append("<li>" + "Exercise " + i);
+						$('#' + section).children().last().append("<ul>");
+						$('#' + section).children().last().children().last().append("<img src='/static/PhysicsRepo/" + title + "'>"); 
+						$('#' + section).children().last().append("</ul>");
+						$('#' + section).append("</li>");
+						i = i + 1;
 					});
 				}
 
