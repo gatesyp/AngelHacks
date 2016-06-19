@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "832F8C2D1D15AF3A00AF1732"
-               BuildableName = "Dynamic Courseware.app"
-               BlueprintName = "Dynamic Courseware"
-               ReferencedContainer = "container:Dynamic Courseware.xcodeproj">
+               BlueprintIdentifier = "566DE9DE1C3E7760008090E9"
+               BuildableName = "OverlayViewDemo.app"
+               BlueprintName = "OverlayViewDemo"
+               ReferencedContainer = "container:OverlayViewDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "832F8C2D1D15AF3A00AF1732"
-            BuildableName = "Dynamic Courseware.app"
-            BlueprintName = "Dynamic Courseware"
-            ReferencedContainer = "container:Dynamic Courseware.xcodeproj">
+            BlueprintIdentifier = "566DE9DE1C3E7760008090E9"
+            BuildableName = "OverlayViewDemo.app"
+            BlueprintName = "OverlayViewDemo"
+            ReferencedContainer = "container:OverlayViewDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "832F8C2D1D15AF3A00AF1732"
-            BuildableName = "Dynamic Courseware.app"
-            BlueprintName = "Dynamic Courseware"
-            ReferencedContainer = "container:Dynamic Courseware.xcodeproj">
+            BlueprintIdentifier = "566DE9DE1C3E7760008090E9"
+            BuildableName = "OverlayViewDemo.app"
+            BlueprintName = "OverlayViewDemo"
+            ReferencedContainer = "container:OverlayViewDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "832F8C2D1D15AF3A00AF1732"
-            BuildableName = "Dynamic Courseware.app"
-            BlueprintName = "Dynamic Courseware"
-            ReferencedContainer = "container:Dynamic Courseware.xcodeproj">
+            BlueprintIdentifier = "566DE9DE1C3E7760008090E9"
+            BuildableName = "OverlayViewDemo.app"
+            BlueprintName = "OverlayViewDemo"
+            ReferencedContainer = "container:OverlayViewDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

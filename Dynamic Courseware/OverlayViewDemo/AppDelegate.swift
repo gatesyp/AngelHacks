@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  Dynamic Courseware
+//  OverlayViewDemo
 //
-//  Created by Aron Gates on 6/18/16.
-//  Copyright © 2016 Gates. All rights reserved.
+//  Created by Sztanyi Szabolcs on 07/01/16.
+//  Copyright © 2016 Zappdesigntemplates. All rights reserved.
 //
 
 import UIKit

@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Dynamic Courseware.xcscheme</key>
+		<key>OverlayViewDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>832F8C2D1D15AF3A00AF1732</key>
+		<key>566DE9DE1C3E7760008090E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

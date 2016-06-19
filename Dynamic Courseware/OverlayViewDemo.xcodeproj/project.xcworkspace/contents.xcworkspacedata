@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Dynamic Courseware.xcodeproj">
+      location = "self:OverlayViewDemo.xcodeproj">
    </FileRef>
 </Workspace>
