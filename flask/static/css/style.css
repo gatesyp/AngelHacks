@@ -1,11 +1,32 @@
+
+        .classChapter {
+            color: red;
+            padding-left: 24px;
+            font-size: 24px;
+        }
+
+        .classSection {
+            color: orange;
+            padding-left: 32px;
+            font-size: 18px;
+        }
+
+        .classInfo {
+            color: yellow;
+            padding-left: 40px;
+            font-size: 14px;
+        }
+
+        .listBase { 
+            border: 1px solid #000;
+            margin: 2em;
+            width: 20em;
+            width: 20em;
+            padding: 5px;
+        }
 /********************/
 /* GENERAL SETTINGS */
 /********************/
-body {
-    background-color: #AAAAAA;
-    font-size: 16px;
-}
-
 #menu {
     list-style: none;
     padding: 0;
@@ -34,9 +55,9 @@ body {
     margin:0;
     display:block;
 }
-#expList p:hover {
+/*#expList p:hover {
     background-color:#121212;
-}
+}*/
 #expList li {
     line-height:140%;
     text-indent:0px;

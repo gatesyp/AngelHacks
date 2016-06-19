@@ -34,7 +34,7 @@ def upload_file():
             return redirect(url_for('uploaded_file', filename=filename))
             #speech_to_text(AUDIO_FILE)
 
-    return render_template("indexCollapse.html")
+    return render_template("index.html")
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
