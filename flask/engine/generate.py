@@ -9,6 +9,8 @@ from sumy.nlp.stemmers import Stemmer
 from sumy.utils import get_stop_words
 from openpyxl import load_workbook
 from bs4 import BeautifulSoup
+import urllib
+import urllib2
 
 import requests
 import re
@@ -41,18 +43,32 @@ class getContent():
 
 
     def get_videos(self, input):
+        print ("get_videos() entered")
         list_videos = {}
-        query = "https://www.google.com/search?q=site: youtube.com " + input 
-        page = requests.get(query)
-        soup = BeautifulSoup(page.content)
-        links = soup.findAll("a")
+        query = urllib.quote(input)
+        url = "https://www.youtube.com/results?search_query=" + query
+        response = urllib2.urlopen(url)
+        html = response.read()
+        soup = BeautifulSoup(html)
         i = 0
-        for link in  soup.find_all("a",href=re.compile("(?<=/url\?q=)(htt.*://.*)")):
-            list_videos[str(i)] =str(  re.split(":(?=http)",link["href"].replace("/url?q=","")))
+        print ("about to iterate through videos found")
+        for vid in soup.findAll(attrs={'class':'yt-uix-tile-link'}):
+            list_videos[str(i)] = 'https://www.youtube.com' + vid['href']
             i = i + 1
+            print ("video added")
         for i in list_videos:
             print (i, list_videos[i])
-        return list_videos
+
+#        page = requests.get(query)
+#        soup = BeautifulSoup(page.content)
+#        links = soup.findAll("a")
+#        i = 0
+#        for link in  soup.find_all("a",href=re.compile("(?<=/url\?q=)(htt.*://.*)")):
+#            list_videos[str(i)] =str(  re.split(":(?=http)",link["href"].replace("/url?q=","")))
+#            i = i + 1
+#        for i in list_videos:
+#            print (i, list_videos[i])
+#        return list_videos
     
     def get_questions(self, input):
         list_of_questions = {}
