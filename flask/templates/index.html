@@ -122,39 +122,36 @@
 
 	$(document).ready(function() {
 		$('#mainPage').hide();
-	    $("#analyze").submit(function(e) {
-      var url = "http://127.0.0.1:5000/api/get_outline"; //e script where you handle the form input.
-      $.ajax({
-        type: "POST",
-        url: url,
-        data: "outline",
-        success: function(data)
-        {
+     $("#analyze").submit(function(e) {
+	      var url = "http://127.0.0.1:5000/api/get_outline"; //e script where you handle the form input.
+	      $.ajax({
+	        type: "POST",
+	        url: url,
+	        data: "outline",
+	        success: function(data)
+	        {
 		    $.each(data, function(key, value) {
 		        console.log(key);
 		        $("#expList").append("<li>"+ key +  "");
 		        $("#expList").children().last().append("<ul id='" + key + "'>");  
-		
-		        $.each(value, function(type, info) {
-					if(type == "YouTube")
-					{
-		            	$("#" + key).append("<li class='YouTubeClass'" + type + ": " + info + "</li>");
-		        		console.log(name);
-					}
 
-					if(key == "summary") {
-		            	$("#" + key).append("<li class='summaryClass'" + type + ":" + info + "</li>");
-		        		console.log(name);
-					}
+			$.each(value, function(section, information) {
+				console.log(section);
+				$("#" + key).append("<li>" + section + "");
+				$("#" + key).children().last().append("<ul id='" + section + "'>");
+				//append to the data ul
+				
+				$.each(information, function(num, title) {
+					console.log(num);
+					$("#" + section).append("<li>" + num + ": " + title + "</li>"); 
+				});
 
-					if(key == "question") {
-		            	$("#" + key).append("<li class='summaryClass'" + type + ":" + info + "</li>");
-		        		console.log(name);
-					}
-		        });
+				$("#" + key).children().last().append("</ul>");
+				$("#" + key).append("</li>");
+			});	
 
 		        $("#expList").children().last().append("</ul>");
-				$("#expList").append("</li>");
+			$("#expList").append("</li>");
 		    }); 
 
         //alert(data); // show response from the python script.
@@ -165,7 +162,7 @@
     });
 	
 		$("#mainPage").show();
-	});
+});
 
 		/*var file = document.getElementById('file-select').files[0]; //Files[0] = 1st file
 		var reader = new FileReader();
