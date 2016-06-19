@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from search import findInfo
 from hpe_speech_to_text import useHaven
 from generate import getContent 
+import json
 
 	
 class Engine():
@@ -18,7 +19,9 @@ class Engine():
         keyword_array=hpe.analyze_content(text)
         
         # keyword_array=alchemy().use_api(c2)
+        print "keyword_array reached"
         searching=findPage()
+        print "findPage() reached"
         maxpage=searching.find_page(keyword_array)
         find=findInfo(maxpage)
         chapter = find.find_chapter()
@@ -28,6 +31,18 @@ class Engine():
 	exercises = generation.get_questions('Work and Energy')
 	vids = generation.get_videos('Work and Energy')
 	summary = generation.get_smry("short.html")
+        #  TODO take all these variables and create one JSON object
+        #  text, keyword_array, chapter, section, exercises, vids, summary
+        outline = {
+            'text': text,
+            'keyword_array': keyword_array,
+            'chapter': chapter,
+            'section': section,
+            'exercises': exercises,
+            'vids': vids, 
+            'summary': summar
+        }
+        return outline
 
 
 
