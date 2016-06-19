@@ -23,16 +23,23 @@ class getContent():
         print ("created a getContent object")
  
     def get_smry(self, input):
+        smry_list = {}
         LANGUAGE = "english"
         SENTENCES_COUNT = 10
-        parser = PlaintextParser.from_file(input + ".txt", Tokenizer(LANGUAGE))
+        parser = PlaintextParser.from_file(input, Tokenizer(LANGUAGE))
         stemmer = Stemmer(LANGUAGE)
     
         summarizer = Summarizer(stemmer)
         summarizer.stop_words = get_stop_words(LANGUAGE)
 
+        i = 0
         for sentence in summarizer(parser.document, SENTENCES_COUNT):
             print(sentence)
+            smry_list[str(i)] = sentence
+            i = i + 1
+        return smry_list
+
+
     def get_videos(self, input):
         list_videos = {}
         query = "https://www.google.com/search?q=site: youtube.com " + input 
@@ -72,7 +79,7 @@ class getContent():
 # import getContent from generate
 
 # myContent = getContent()
-# myContent.get_smry("test")
+# myContent.get_smry("test.txt")
 # myContent.get_videos("Work and Kinetic Energy")
 # myContent.get_questions("Work, Power, and Energy")
 

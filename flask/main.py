@@ -33,7 +33,6 @@ def upload_file():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             AUDIO_FILE = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             return redirect(url_for('uploaded_file', filename=filename))
-            #speech_to_text(AUDIO_FILE)
 
     return render_template("indexFromWork.html")
 

@@ -30,7 +30,7 @@ class Engine():
 	generation = getContent()
 	exercises = generation.get_questions('Work and Energy')
 	vids = generation.get_videos('Work and Energy')
-	summary = generation.get_smry("short.html")
+	summary = generation.get_smry("test.txt")
         #  TODO take all these variables and create one JSON object
         #  text, keyword_array, chapter, section, exercises, vids, summary
         outline = {
@@ -40,9 +40,9 @@ class Engine():
             'section': section,
             'exercises': exercises,
             'vids': vids, 
-            'summary': summar
+            'summary': summary
         }
-        return outline
+        return jsonify({'data' : outline})
 
 
 
