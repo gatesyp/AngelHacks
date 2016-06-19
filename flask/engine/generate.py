@@ -59,6 +59,8 @@ class getContent():
         for i in list_videos:
             print (i, list_videos[i])
 
+        return list_videos
+
 #        page = requests.get(query)
 #        soup = BeautifulSoup(page.content)
 #        links = soup.findAll("a")
@@ -71,6 +73,7 @@ class getContent():
 #        return list_videos
     
     def get_questions(self, input):
+        print ("get_questions entered")
         list_of_questions = {}
     
         wb2 = load_workbook(filename ='QuestionBank.xlsm', data_only=True)

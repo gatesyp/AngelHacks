@@ -29,7 +29,7 @@ class Engine():
 #        section = find.find_section()
 	# make a getContent object
 	generation = getContent()
-	exercises = generation.get_questions('Work and Energy')
+	exercises = generation.get_questions('Work, Power, and Energy')
 	vids = generation.get_videos('Work and Energy')
 	summary = generation.get_smry("test.txt")
         #  TODO take all these variables and create one JSON object
