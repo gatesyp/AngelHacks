@@ -5,6 +5,7 @@ from search import findInfo
 from hpe_speech_to_text import useHaven
 from generate import getContent 
 import json
+import flask
 
 	
 class Engine():
@@ -22,10 +23,10 @@ class Engine():
         print "keyword_array reached"
         searching=findPage()
         print "findPage() reached"
-        maxpage=searching.find_page(keyword_array)
-        find=findInfo(maxpage)
-        chapter = find.find_chapter()
-        section = find.find_section()
+#        maxpage=searching.find_page(keyword_array)
+#        find=findInfo(maxpage)
+#        chapter = find.find_chapter()
+#        section = find.find_section()
 	# make a getContent object
 	generation = getContent()
 	exercises = generation.get_questions('Work and Energy')
@@ -34,15 +35,11 @@ class Engine():
         #  TODO take all these variables and create one JSON object
         #  text, keyword_array, chapter, section, exercises, vids, summary
         outline = {
-            'text': text,
-            'keyword_array': keyword_array,
-            'chapter': chapter,
-            'section': section,
             'exercises': exercises,
             'vids': vids, 
             'summary': summary
         }
-        return jsonify({'data' : outline})
+        return flask.jsonify({'data' : outline})
 
 
 

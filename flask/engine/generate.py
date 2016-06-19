@@ -35,7 +35,7 @@ class getContent():
         i = 0
         for sentence in summarizer(parser.document, SENTENCES_COUNT):
             print(sentence)
-            smry_list[str(i)] = sentence
+            smry_list[str(i)] = str(sentence)
             i = i + 1
         return smry_list
 
