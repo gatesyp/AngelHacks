@@ -34,8 +34,13 @@
 	}
 
 	.mainOutline {
-		font-size: 30px;
+		font-size: 24px;
 	}
+
+	.summaries {
+		font-size: 20px;
+	}
+
 </style>
 
 </head>
@@ -53,7 +58,7 @@
                                 <h3 class="card-header info-color-dark white-text">Latest Outline</h3>
                                 <div class="card-block">
                                     <h4 class="card-title">Week 1</h4>
-                                    <p class="card-text" id="breifsum" >this week we talked about memes!</p>
+                                    <p class="card-text" id="breifsum" >First Lecture- Work and Power</p>
                                     <a class="btn btn-primary waves-effect waves-light">view outline</a>
                                 </div>
                             </div>
@@ -64,8 +69,8 @@
                             <div class="card">
                                 <h3 class="card-header warning-color white-text">Create New</h3>
                                 <div class="card-block">
-                                    <h4 class="card-title">Week 2</h4>
-                                    <p class="card-text" id="breifsum" >How to meme 101<p>
+                                    <h4 class="card-title">Week 1</h4>
+                                    <p class="card-text" id="breifsum" >Second Lecture- Kinematics<p>
                                     <a class="btn btn-primary waves-effect waves-light">Add New</a>
                                 </div>
                             </div>
@@ -153,7 +158,7 @@
 				if (section == "summary") {
 					$.each(information, function(num, title) {
 						console.log(num);
-						$("#" + section).append("<li style='list-style-type:disc'>"  + title + "</li>"); 
+						$("#" + section).append("<li class='summaries' style='list-style-type:disc'>"  + title + "</li>"); 
 					});
 				}
 				if (section == "vids") {
