@@ -71,8 +71,8 @@ class getContent():
 # example of how to use the above class 
 # import getContent from generate
 
-myContent = getContent()
-myContent.get_smry("test")
+# myContent = getContent()
+# myContent.get_smry("test")
 # myContent.get_videos("Work and Kinetic Energy")
 # myContent.get_questions("Work, Power, and Energy")
 

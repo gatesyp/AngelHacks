@@ -4,6 +4,7 @@ import re
 
 class findInfo():
         sib=[]
+	print("aoubt to open the html file")
         soup=  BeautifulSoup(open("short.html"),"html.parser")
         def __init__(self,max_index):
                 print "created a findInfo object"

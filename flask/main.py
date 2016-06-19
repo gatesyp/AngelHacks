@@ -42,12 +42,14 @@ def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 @app.route('/api/get_outline', methods=['POST'])
-def get_outline(audio_filename):
+def get_outline():
     """
     Get the json notes off of this audio file
     @param audio_filename: the name of the audio file for this lecture
     @return: JSON representation of the lecture study guide
     """
+    print (request.form['filename'])
+    audio_filename = request.form['filename']
     return Engine().execute(audio_filename)
 
 if __name__ == "__main__":
