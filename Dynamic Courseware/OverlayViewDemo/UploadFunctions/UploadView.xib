@@ -8,7 +8,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UploadViewController" customModule="DCWear" customModuleProvider="target">
             <connections>
-                <outlet property="emptyIcon" destination="XCY-Yn-HGj" id="rmD-AK-ZAR"/>
                 <outlet property="visualEffectView" destination="QSe-3H-Shi" id="SzW-UF-9dC"/>
             </connections>
         </placeholder>
@@ -22,17 +21,19 @@
                         <frame key="frameInset"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circled_up_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="XCY-Yn-HGj">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="2VY-a2-Rh7"/>
-                                    <constraint firstAttribute="width" constant="191" id="Gub-wl-ZhW"/>
-                                </constraints>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C76-gM-gFD">
+                                <frame key="frameInset" minX="138" minY="165" width="98" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="circled_up_2.png"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upload" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNc-Lp-g7t">
+                                <frame key="frameInset" minX="128" minY="109" width="118" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="36"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="top" secondItem="x7n-lc-xIx" secondAttribute="top" constant="133" id="eIs-yl-HoU"/>
-                            <constraint firstItem="XCY-Yn-HGj" firstAttribute="centerX" secondItem="x7n-lc-xIx" secondAttribute="centerX" id="tsG-iY-mZz"/>
-                        </constraints>
                     </view>
                     <blurEffect style="light"/>
                 </visualEffectView>

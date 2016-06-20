@@ -22,9 +22,10 @@
                         <frame key="frameInset"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2016-06-19 at 7.18.21 AM.png" translatesAutoresizingMaskIntoConstraints="NO" id="hEM-un-kLt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEM-un-kLt">
                                 <frame key="frameInset" minX="16" minY="139" width="341" height="262"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.027978459373116493" green="0.0078383255749940872" blue="0.0035279900766909122" alpha="0.15667808219178081" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stop.png" translatesAutoresizingMaskIntoConstraints="NO" id="c9q-q7-a3g">
                                 <frame key="frameInset" minX="17" minY="214" width="145" height="145"/>
@@ -75,7 +76,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Screen Shot 2016-06-19 at 7.18.21 AM.png" width="757" height="93"/>
         <image name="microphone2.png" width="96" height="96"/>
         <image name="record.png" width="96" height="96"/>
         <image name="stop.png" width="96" height="96"/>
